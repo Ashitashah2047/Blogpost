@@ -1,0 +1,40 @@
+
+<div class="card" style="width: 30rem;">
+    <div class="card-header">
+      <h1>Detailed Search<h1>
+    </div>
+    <div class="card-body">
+
+        <%= form_for @search, html: {class: "pure-form"} do |s| %>
+
+            <div class="field">
+                <%= s.label :title %><br>
+                <%= s.text_field :title, class:"form-control", placeholder: "Title" %>
+            </div>
+
+            <div class="field">
+                <%= s.label :body %><br>
+                <%= s.text_field :body, class:"form-control", placeholder: "Body" %>
+            </div>
+
+            <div class="field">
+                <%= s.label :start_date %><br>
+                <%= s.date_select :start_date %>
+            </div>
+
+            <div class="field">
+                <%= s.label :end_date %><br>
+                <%= s.date_select :end_date %>
+            </div>
+
+            <div class="action">
+                <%= s.submit "Search", class: "pure-button pure-button-primary btn btn-info" %>
+            </div>
+
+        <% end %>
+
+        <br><p><%= link_to 'Back', posts_path, class:"btn btn-info" %></p>
+
+    </div>
+
+</div>

@@ -1,0 +1,57 @@
+<%= form_with(model: post) do |form| %>
+  <% if post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+        <% post.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <br><div class="field form-group">
+    <%= form.label :title %>
+    <%= form.text_field :title, class:"form-control", placeholder: "Title" %>
+  </div><br>
+
+  <br><div class="field form-group">
+    <%= form.label :body %>
+    <%= form.text_area :body, class:"form-control", placeholder: "Body" %>
+  </div><br>
+
+  <br><div class="field form-group">
+    <%= form.label :start_date %>
+    <%= form.date_select :start_date, class:"form-control" %>
+  </div><br>
+
+  <br><div class="field form-group">
+    <%= form.label :end_date %>
+    <%= form.date_select :end_date, class:"form-control" %>
+  </div><br>
+
+  <% if post.image? %>
+    <div class="image_wrapper">
+      <%= image_tag @post.image.thumb.url %>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label "Upload an Image to Post" %>
+    <%= form.file_field :image, class:"form-control"%>
+  </div>
+
+  <% if post.image? %>
+    <div class="form-check">
+      <label class="form-check-label">
+        <%= form.check_box :remove_image, class:"form-check-input" %> Remove Image
+      </label>
+    </div>
+  <% end %><br>
+
+  <br><div class="actions">
+    <%= form.submit class:"btn btn-info" %>
+  </div><br>
+
+<% end %>

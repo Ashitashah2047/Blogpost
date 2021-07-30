@@ -1,0 +1,33 @@
+<h5>Welcome....</h5>
+
+<div class="jumbotron">
+  <h1 class="display-4">Home Page</h1>
+  <p class="lead">Welcome to the home page.</p>
+  <hr class="my-4">
+  <p class="lead">
+    <div style="text: center">
+
+        <div style="text-align: center">
+
+            <% if current_user %>
+        
+            <%= link_to 'Sign Out', destroy_user_session_path,
+            method: :delete, class:"btn btn-info" %>
+        
+            <% else %>
+
+            <%= link_to 'Sign Up', new_user_registration_path, class:"btn btn-info" %>
+
+            <%= link_to 'Sign In', new_user_session_path, class:"btn btn-info" %>
+
+            <% end %>
+
+            <%= link_to 'Posts', posts_path, class:"btn btn-info" %>
+            <%= link_to "Location", pages_location_path, class:"btn btn-info" %>
+
+        </div>
+
+    </div>
+  </p>
+  <hr class="my-4">
+</div>

@@ -1,0 +1,15 @@
+<html>
+<head>
+  <title>PDF</title>
+  <%= wicked_pdf_stylesheet_link_tag "application" -%>
+  <%= wicked_pdf_stylesheet_link_tag "posts" -%>
+  <%= wicked_pdf_stylesheet_link_tag "comments" -%>
+  <%= wicked_pdf_stylesheet_link_tag "https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" %>
+
+</head>
+<body>
+<div class='container'>
+  <%= yield %>
+</div>
+</body>
+</html>

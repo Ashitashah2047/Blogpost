@@ -1,0 +1,28 @@
+<h1></h1>
+
+<div class="card" style="width: 30rem;">
+  <div class="card-header">
+    <h1>Search Results</h1>
+  </div>
+  <div class="card-body">
+
+<% if @search.search_posts.empty? %>
+
+    <p><h3>No Posts Found</h3></p>
+
+<% else %>
+
+    <% @search.search_posts.each do |serpo| %><br>
+
+        <div class="div">
+            <h3><%= serpo.title %></h3>
+            <p><%= serpo.body %></p>
+            <p><%= serpo.start_date.strftime("%d %B %Y") %></p>
+            <p><%= serpo.end_date.strftime("%d %B %Y") %></p>
+        </div>
+
+    <% end %>
+
+    <br><p><%= link_to 'Back', new_search_path, class: "btn btn-info" %></p>
+
+<% end %>

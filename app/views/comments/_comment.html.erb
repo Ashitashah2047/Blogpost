@@ -1,0 +1,12 @@
+<% @comments.each do |c| %>
+
+    <p>
+        <%= c.comment %>
+        
+        <%= c.user.username %>
+
+        <%= link_to "Delete", post_comment_path(c.post_id, c.id), 
+        method: :delete %>
+    </p>
+
+<% end %>
