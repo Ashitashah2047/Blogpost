@@ -13,7 +13,7 @@ Rails.application.configure do
 
   # Show full error reports.
   config.consider_all_requests_local = true
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  config.action_mailer.default_url_options = { host: '127.0.0.1', port: 3000 }
   config.active_job.queue_adapter = :sidekiq
 
   # Enable/disable caching. By default caching is disabled.
@@ -36,7 +36,7 @@ Rails.application.configure do
   config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.perform_caching = false
 
@@ -75,4 +75,21 @@ Rails.application.configure do
 
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
+
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+
+  config.action_mailer.default_options = {from: 'ashita2000shah@gmail.com'}
+  config.action_mailer.asset_host = 'http://127.0.0.1:3000'
+
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'smtp.gmail.com',
+    port:                 587,
+    domain:               'bitcot.com',
+    user_name:            'ashita2000shah@gmail.com',
+    password:             'ashita0704@12345',
+    authentication:       'plain',
+    enable_starttls_auto: true  }
+
 end

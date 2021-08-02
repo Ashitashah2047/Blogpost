@@ -25,6 +25,8 @@ gem 'file_validators'
 gem 'mini_magick', '~> 4.3'
 gem 'wicked_pdf', '~> 2.1'
 gem 'wkhtmltopdf-binary'
+gem 'aws-sdk-ses'
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

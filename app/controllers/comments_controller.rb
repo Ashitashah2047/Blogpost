@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
         @comment = @post.comments.create(comment_params)
 
         if @comment.save
+            UserMailer.signup_email(@post.id).deliver_later
             redirect_to post_path(@post)
         end
 

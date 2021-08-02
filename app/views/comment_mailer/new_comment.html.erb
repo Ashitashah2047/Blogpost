@@ -1,0 +1,10 @@
+<p>
+  A new comment was added for your posy <%= link_to @post.title %>:
+</p>
+<blockquote>
+  <em><%= @comment.body %></em>
+</blockquote>
+<p>
+  To reply to this comment, make sure to visit
+  <%= link_to "Post Page", @post %>
+</p>
